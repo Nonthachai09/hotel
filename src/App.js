@@ -1,20 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Carousel from './page/Carousel';
+import Carousel1 from './page/Carousel1';
 import Home from './Homepage/Home';
+import Hotel from './Homepage/hotel';
+import HotelBooking from './Homepage/HotelBooking'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <Router> 
+      <div className="App">
+        <Navbar /> 
 
-
-
-      <Carousel />
-
-      <Home />
-    </div>
+        <Routes> 
+          <Route path="/home" element={<Home />} /> 
+          <Route path="/hotel" element={<Hotel />} /> 
+          <Route path="/booking" element={<HotelBooking />} /> 
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
